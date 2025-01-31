@@ -9,6 +9,7 @@ const PaymentComponent = () => {
   const router = useRouter(); // For navigation
   const amount = searchParams.get('amount') || '500'; // Retrieve the amount from query params or default to 500
   const [hideName, setHideName] = useState(false); // State for hide name checkbox
+  const [phoneError, setPhoneError] = useState(''); // State for phone number validation error
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -21,10 +22,21 @@ const PaymentComponent = () => {
     e.preventDefault(); // Prevent default form submission
     const formData = new FormData(e.currentTarget);
 
+    // Get the phone number from the form
+    const mobile = formData.get('mobile') as string;
+
+    // Validate phone number
+    if (!/^\d{10}$/.test(mobile)) {
+      setPhoneError('Phone number must be exactly 10 digits.');
+      return;
+    } else {
+      setPhoneError('');
+    }
+
     // Prepare data for submission
     const data = {
       name: hideName ? 'Not Interested' : formData.get('name'), // Use default name if hidden
-      mobile: formData.get('mobile'),
+      mobile,
       place: formData.get('place'),
       amount: Number(amount), // Ensure amount is a number
       hideName,
@@ -55,6 +67,9 @@ const PaymentComponent = () => {
           name: 'Two20',
           description: 'Thank you for your donation!',
           order_id: order.id,
+          prefill: {
+            contact: mobile, // Pass the phone number to Razorpay
+          },
           handler: async (response: any) => {
             // Handle successful payment here
             await fetch('/api/donate', {
@@ -126,6 +141,7 @@ const PaymentComponent = () => {
                     className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                   />
+                  {phoneError && <p className="text-red-500 text-sm mt-1">{phoneError}</p>}
                 </div>
                 <div>
                   <input

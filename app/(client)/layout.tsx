@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+// import Footer from "../components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Two '20 - Empower Change with Just ₹20",
@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={`antialiased`}>
         <Header />
         {children}
-        <Footer/>
+        {/* <Footer/> */}
       </body>
     </html>
   );

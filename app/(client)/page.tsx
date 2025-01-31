@@ -3,6 +3,7 @@ import Hero from "../components/Hero/Hero";
 import LeaderBoard from "../components/LeaderBoard/LeaderBoard";
 import PaymentSection from "../components/PaymentSection/PaymentSection";
 import SupportBtn from "../components/SupportBtn/SupportBtn";
+import Footer from "../components/Footer/Footer"; 
 
 import dbConnect from '@/lib/db';
 
@@ -30,6 +31,7 @@ export default function Home() {
       <PaymentSection key="payment-section" />
       <AboutSection/>
       <LeaderBoard />
+      <Footer/>
     </div>
   );
 }
