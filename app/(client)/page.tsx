@@ -1,3 +1,4 @@
+import AboutSection from "../components/AboutSection/AboutSection";
 import Hero from "../components/Hero/Hero";
 import LeaderBoard from "../components/LeaderBoard/LeaderBoard";
 import PaymentSection from "../components/PaymentSection/PaymentSection";
@@ -27,6 +28,7 @@ export default function Home() {
       <SupportBtn />
       {/* Add a key to the PaymentSection component */}
       <PaymentSection key="payment-section" />
+      <AboutSection/>
       <LeaderBoard />
     </div>
   );

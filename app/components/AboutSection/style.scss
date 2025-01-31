@@ -1,0 +1,41 @@
+@import '../../styles/_variables';
+
+.about-section-container {
+  .about-container {
+    // Existing styles for heading
+    .heading {
+      color: $main_purple;
+      font-size: 2.5rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.00625rem;
+      margin-bottom: 0.4em;
+
+      @media(max-width: 1000px) {
+        font-size: 2rem;
+      }
+
+      @media(max-width: 640px) {
+        font-size: 1.7rem;
+      }
+    }
+
+    // New styles for the <p> section
+    p {
+      color: #444444; /* Darker text color for readability */
+      font-size: 1.125rem; /* Base font size (18px) */
+      line-height: 1.6; /* Improve readability */
+      margin-top: 1rem; /* Space above paragraphs */
+      margin-bottom: 1rem; /* Space below paragraphs */
+
+      @media(max-width: 1000px) {
+        font-size: 1rem; /* Smaller font size on medium screens */
+      }
+
+      @media(max-width: 640px) {
+        font-size: 0.875rem; /* Smaller font size on small screens */
+      }
+    }
+  }
+}
