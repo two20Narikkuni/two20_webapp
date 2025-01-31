@@ -1,0 +1,65 @@
+.policy-container {
+    max-width: 800px; /* Set a max width for readability */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add some padding */
+    background-color: #ffffff; /* White background for the content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.2s ease; /* Smooth transition for shadow */
+    
+    // Responsive padding
+    @media (max-width: 768px) {
+      padding: 15px; /* Less padding on smaller screens */
+    }
+  
+    &:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    }
+  }
+  
+  .policy-title {
+    font-size: 2rem; /* Title size */
+    margin-bottom: 20px; /* Space below the title */
+    color: #4B2984; /* Custom dark color for the title */
+    text-align: center; /* Center the title */
+    font-weight: bold; /* Make the title bold */
+  }
+  
+  h2 {
+    font-size: 1.5rem; /* Subheading size */
+    margin-top: 20px; /* Space above the subheading */
+    color: #4B2984; /* Use the same custom color for subheadings */
+    font-weight: bold; /* Make the subheading bold */
+  }
+  
+  p {
+    line-height: 1.6; /* Improve readability */
+    color: #444444; /* Darker text for paragraphs */
+    margin-bottom: 15px; /* Space below paragraphs */
+  }
+  
+  ul {
+    margin: 10px 0; /* Space around lists */
+    padding-left: 20px; /* Indent lists */
+    list-style-type: disc; /* Use disc bullets */
+  }
+  
+  li {
+    margin-bottom: 5px; /* Space between list items */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .policy-title {
+      font-size: 1.75rem; /* Smaller title on mobile */
+    }
+  
+    h2 {
+      font-size: 1.25rem; /* Smaller subheading on mobile */
+    }
+  
+    p {
+      font-size: 0.9rem; /* Smaller text on mobile */
+    }
+  }
+  

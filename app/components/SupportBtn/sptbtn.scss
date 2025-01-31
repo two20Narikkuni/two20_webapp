@@ -1,0 +1,39 @@
+@import '../../styles/_variables';
+
+.support-btn-container{
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    .support-btn-section{
+        button{
+            width: 49%;
+            background-color: $white;
+            display: flex;
+            padding: 0.9375rem 0em;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.3125rem;
+            border: 1.3px solid rgba(75, 41, 132, 0.18);
+
+            color: #434343;
+            font-size: 1.5875rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.00425rem;
+
+            gap: 0.5em;
+
+            @media(max-width: 1000px){
+                padding: 0.8rem 0em;
+                font-size: 1.3rem;
+            }
+
+            @media (max-width: 1000px) {
+                .support-btn-image {
+                  width: 24px;
+                  height: 24px;
+                }
+            }
+        }
+    }
+}

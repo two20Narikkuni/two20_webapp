@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '../styles/fonts'; // Import your custom fonts
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: 'Source Sans 3', Arial, Helvetica, sans-serif; // Use custom font as the primary font
+  box-sizing: border-box;
+}
+
+/* Add padding to the container for mobile devices */
+.container {
+  padding-left: 1.3rem; /* 16px */
+  padding-right: 1.3rem; /* 16px */
+}
+
+/* Ensure Tailwind's container behavior is preserved at the sm breakpoint and above */
+@media (min-width: 640px) {
+  .container {
+    padding-left: var(--tw-container-padding-x, 1rem); /* Use Tailwind's padding */
+    padding-right: var(--tw-container-padding-x, 1rem); /* Use Tailwind's padding */
+  }
+}

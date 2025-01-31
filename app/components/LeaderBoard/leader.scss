@@ -1,0 +1,111 @@
+@import '../../styles/_variables';
+
+.leaderboard-container{
+    margin-bottom: 2em;
+    .leaderboard{
+        .heading{
+            color: $main_purple;
+            font-size: 2.5rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.00625rem;
+
+            margin-bottom: 0.4em;
+
+            @media(max-width: 1000px){
+                font-size: 2rem;
+            }
+
+            @media(max-width: 640px){
+                font-size: 1.7rem;
+            }
+        }
+
+        .ranking-container{
+            height: 100%;
+            .rank-card{
+                border-radius: 0.4375rem;
+                background: $main_purple;
+                height: 100%;
+                padding: 0.6875rem 1.9375rem 0.8125rem 0.875rem;
+
+                .left-side{
+                    height: 100%;
+                    .pos{
+                        background-color: $white;
+                        border-radius: 0.3125rem;
+                        height: 3.25rem;
+                        width: 3.25rem;
+
+                        color: $main_purple;
+                        text-align: center;
+                        font-size: 2.1875rem;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        letter-spacing: 0.0055rem;
+
+                        span{
+                            font-size: 1rem;
+                        }
+
+                        @media(max-width:1000px){
+                            font-size: 1.9rem;
+                        }
+                    }
+
+                    .name{
+                        margin-left: 0.75rem;
+                        h4{
+                            color: $white;
+                            font-size: 1.6875rem;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: normal;
+                            letter-spacing: 0.00425rem;
+
+                            @media(max-width: 1000px){
+                                font-size: 1.4rem;
+                            }
+
+                            @media(max-width: 640px){
+                                font-size: 1.2rem;
+                            }
+                        }
+
+                        .location{
+                            color: $white;
+                            font-size: 0.7875rem;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: normal;
+                            letter-spacing: 0.00175rem;
+                        }
+                    }
+                }
+
+                .right-side{
+                    .amount{
+                        color: $white;
+                        text-align: right;
+                        font-size: 1.875rem;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        letter-spacing: 0.00469rem;
+
+                        @media(max-width: 1000px){
+                            font-size: 1.5rem;
+                    }
+
+                    @media(max-width: 640px){
+                        font-size: 1.3rem;
+                    }
+                }
+                }
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,31 @@
+.header-container {
+    // Any styles for the header container can go here
+    padding: 1.12em 0em;
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      
+        .logo {
+          // Adjust the size of the logo here
+          width: 90px;
+          @media(max-width: 678px){
+            width: 50px; // Set the desired width
+          }
+          height: auto; // Maintain aspect ratio (auto height)
+          
+          // If you want to set a specific height as well, you can do:
+          // height: 100px; 
+          // width: 100px; // This will set both width and height explicitly
+      
+          img {
+            width: 100%; // Make the image take the full width of the logo container
+            height: auto; // Maintain aspect ratio
+          }
+        }
+      
+        .hamburger-btn {
+          cursor: pointer; // Change cursor on hover
+        }
+      }
+  }

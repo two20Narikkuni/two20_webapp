@@ -1,0 +1,63 @@
+.payment-section-container{
+    height: 85vh;
+    background-color: white;
+    .payment-section{
+        .amount-container{
+           h2{
+            color: var(--cta-color, #4B2984);
+            text-align: center;
+            font-size: 8.125rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.02031rem;
+
+            @media(max-width: 1200px){
+                font-size: 6rem;
+            }
+           }
+
+           .form-container{
+            form{
+                width: 30%;
+
+                @media(max-width:1100px){
+                    width: 70%;
+                }
+
+                @media(max-width:600px){
+                    width: 90%;
+                }
+
+                input{
+                    display: flex;
+                    padding: 1.0625rem 1.1875rem;
+                    align-items: center;
+                    align-self: stretch;
+
+                    border-radius: 0.3125rem;
+                    border: 1.5px solid var(--outline-violet, rgba(75, 41, 132, 0.18));
+
+
+                    color: #9F9FB7;
+                    font-size: 1rem;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: 0.00219rem;
+                }
+
+                button{
+                    background-color: #4B2984;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    transition: all .3s ease-in-out;
+                }
+                button:hover{
+                    background-color: #3c1e70;
+                }
+            }
+           }
+        }
+    }
+}

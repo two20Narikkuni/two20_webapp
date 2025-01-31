@@ -1,0 +1,48 @@
+.footer-container {
+  background-color: #4B2984; /* Use your brand color */
+  color: white; /* Text color */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center; /* Center text for mobile */
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px; /* Space between links */
+}
+
+.footer-link {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Make links bold */
+}
+
+.footer-link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.parent-org {
+  margin-top: 10px; /* Margin for spacing */
+}
+
+.parent-org-link {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.parent-org-link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row; /* Row layout for larger screens */
+    justify-content: space-between; /* Space between elements */
+  }
+}/*# sourceMappingURL=style.css.map */

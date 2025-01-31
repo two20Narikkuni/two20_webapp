@@ -1,0 +1,50 @@
+.payment-section-container {
+  height: unset !important;
+}
+.payment-section-container .payment-section {
+  margin-bottom: 2.25em;
+}
+.payment-section-container .payment-section h3 {
+  color: #4B2984;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.00625rem;
+}
+@media (max-width: 1000px) {
+  .payment-section-container .payment-section h3 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 640px) {
+  .payment-section-container .payment-section h3 {
+    font-size: 1.7rem;
+  }
+}
+.payment-section-container .payment-section .payment-buttons {
+  margin-top: 1.25em;
+}
+.payment-section-container .payment-section .payment-buttons button {
+  background-color: #FFFFFF;
+  color: #4B2984;
+  text-align: center;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.00563rem;
+  border-radius: 0.3125rem;
+  border: 1.3px solid rgba(75, 41, 132, 0.18);
+  display: flex;
+  padding: 1.125rem 0rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+@media (max-width: 1000px) {
+  .payment-section-container .payment-section .payment-buttons button {
+    padding: 1rem 0rem;
+    font-size: 1.7rem;
+  }
+}/*# sourceMappingURL=ps.css.map */

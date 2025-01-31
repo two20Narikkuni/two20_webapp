@@ -1,0 +1,82 @@
+.hero-container-main {
+  margin-top: 1em;
+}
+.hero-container-main .hero-container {
+  height: 30vh;
+  background-color: red;
+  padding: 0em 20%;
+  background: url("/hero-image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0.687rem;
+  gap: 1em;
+}
+@media (max-width: 640px) {
+  .hero-container-main .hero-container {
+    height: 20vh;
+  }
+}
+@media (max-width: 640px) {
+  .hero-container-main .hero-container {
+    padding: 0em 10%;
+  }
+}
+.hero-container-main .hero-container h1 {
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 3.625rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 1000px) {
+  .hero-container-main .hero-container h1 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 640px) {
+  .hero-container-main .hero-container h1 {
+    font-size: 1.9rem;
+  }
+}
+.hero-container-main .hero-container p {
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.2875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.75rem; /* 147.368% */
+}
+@media (max-width: 1000px) {
+  .hero-container-main .hero-container p {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+  }
+}
+.hero-container-main .hero-container button {
+  display: flex;
+  padding: 0.75rem 1.3125rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6875rem;
+  background-color: #4B2984;
+  border: 1px solid #FFFFFF;
+  border-radius: 0.5rem;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 1000px) {
+  .hero-container-main .hero-container button {
+    padding: 0.7rem 1.1rem;
+    gap: 0.3rem;
+  }
+}
+@media (max-width: 678px) {
+  .hero-container-main {
+    padding: 0em 1em;
+  }
+}/*# sourceMappingURL=hero.css.map */

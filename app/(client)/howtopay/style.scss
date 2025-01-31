@@ -1,0 +1,41 @@
+.howtopay-section-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.125rem 0;
+    color: var(--text-violet, #4B2984);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.00219rem;
+
+    h2{
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+    }
+
+    .howtopay-section{
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: start;
+        width: 70%;
+
+        @media(max-width: 1200px){
+            width: 90%;
+        }
+
+        .list-container{
+            .item{
+                gap: 0.7em;
+                margin-bottom: 1em;
+                p{
+                    color: #434343;
+                }
+            }
+        }
+    }
+}
