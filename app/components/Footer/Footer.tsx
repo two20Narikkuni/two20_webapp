@@ -6,8 +6,8 @@ const Footer = () => {
     <footer className="footer-container font-sans">
       <div className="footer-content container mx-auto flex flex-col md:flex-row justify-between items-center p-4">
         <div className="footer-links">
-          <a href="/privacy-policy" className="footer-link">Privacy Policy</a>
-          <a href="/terms-and-conditions" className="footer-link">Terms and Conditions</a>
+          <a href="/privacypolicy" className="footer-link">Privacy Policy</a>
+          <a href="/terms-conditions" className="footer-link">Terms and Conditions</a>
           <a href="/refund-policy" className="footer-link">Refund Policy</a>
         </div>
         <div className="parent-org mt-4 md:mt-0">
