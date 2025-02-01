@@ -30,4 +30,13 @@
     width: 24px;
     height: 24px;
   }
+}
+@media (max-width: 640px) {
+  .support-btn-container .support-btn-section button {
+    font-size: 1.1rem;
+  }
+  .support-btn-container .support-btn-section button .support-btn-image {
+    width: 20px;
+    height: 20px;
+  }
 }/*# sourceMappingURL=sptbtn.css.map */

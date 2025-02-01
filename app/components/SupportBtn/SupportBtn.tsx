@@ -12,6 +12,11 @@ const SupportBtn = () => {
     router.push('/howtopay'); // Redirect to /howtopay
   };
 
+  // Function to handle the "Chat Support" button click
+  const handleChatSupportClick = () => {
+    window.location.href = 'https://wa.link/g4b2cn'; // Redirect to WhatsApp link
+  };
+
   return (
     <section className='support-btn-container'>
       <div className='support-btn-section container mx-auto flex items-center justify-between'>
@@ -19,7 +24,7 @@ const SupportBtn = () => {
           How to Pay?
           <Image src="/request.svg" className='support-btn-image' alt="How to Pay" width={33.04} height={33.04} />
         </button>
-        <button className='flex items-center justify-center font-sans'>
+        <button onClick={handleChatSupportClick} className='flex items-center justify-center font-sans'>
           Chat Support
           <Image src="/whatsapp.svg" className='support-btn-image' alt="App Support" width={33.04} height={33.04} />
         </button>

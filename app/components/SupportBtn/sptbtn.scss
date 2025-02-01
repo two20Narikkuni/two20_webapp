@@ -34,6 +34,15 @@
                   height: 24px;
                 }
             }
+
+            @media(max-width: 640px){
+                font-size: 1.1rem;
+
+                .support-btn-image {
+                    width: 20px;
+                    height: 20px;
+                  }
+            }
         }
     }
 }
