@@ -57,10 +57,12 @@ const LeaderBoard = () => {
       <div className="leaderboard container mx-auto">
         <h3 className="heading">Leaderboard (This Month)</h3>
         <div className="ranking-container flex flex-col gap-4">
-          {leaderboard.map((entry, index) => (
-            <div key={index} className={`${entry.rank === 1 ? '1st' : entry.rank === 2 ? '2nd' : '3rd'} rank-card flex items-center justify-between`}>
+          {leaderboard.map((entry) => (
+            <div key={entry.rank} className={`${entry.rank === 1 ? '1st' : entry.rank === 2 ? '2nd' : '3rd'} rank-card flex items-center justify-between`}>
               <div className="left-side flex items-center justify-center">
-                <div className="pos flex items-center justify-center">{entry.rank}<span>{entry.rank === 1 ? 'st' : entry.rank === 2 ? 'nd' : 'rd'}</span></div>
+                <div className="pos flex items-center justify-center">
+                  {entry.rank}<span>{entry.rank === 1 ? 'st' : entry.rank === 2 ? 'nd' : 'rd'}</span>
+                </div>
                 <div className="name">
                   <h4>{entry.name}</h4>
                   <div className="location">{entry.location}</div>
