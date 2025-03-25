@@ -17,7 +17,7 @@ export async function POST(req) {
     if (existingDonation) {
       // Update the existing donation
       existingDonation.amount += Number(amount); // Add the new amount
-      existingDonation.name = hideName ? 'Not Interested' : name; // Update name if not hidden
+      existingDonation.name = hideName ? 'Not Interested' : name; // Update name if not hiddnn
       existingDonation.place = place; // Update place
       existingDonation.createdAt = new Date(); // Update the date to now
       await existingDonation.save(); // Save the updated donation record
