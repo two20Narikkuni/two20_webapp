@@ -48,6 +48,13 @@ const LeaderBoard = () => {
     fetchLeaderboard();
   }, []);
 
+  const getRankSuffix = (rank: number) => {
+    if (rank === 1) return 'st';
+    if (rank === 2) return 'nd';
+    if (rank === 3) return 'rd';
+    return 'th'; // For 4th and beyond
+  };
+
   if (loading) {
     return <div>Loading...</div>; // Show loading message
   }
@@ -58,10 +65,10 @@ const LeaderBoard = () => {
         <h3 className="heading">Leaderboard (This Month)</h3>
         <div className="ranking-container flex flex-col gap-4">
           {leaderboard.map((entry) => (
-            <div key={entry.rank} className={`${entry.rank === 1 ? '1st' : entry.rank === 2 ? '2nd' : '3rd'} rank-card flex items-center justify-between`}>
+            <div key={entry.rank} className={`${entry.rank === 1 ? '1st' : entry.rank === 2 ? '2nd' : entry.rank === 3 ? '3rd' : '4th'} rank-card flex items-center justify-between`}>
               <div className="left-side flex items-center justify-center">
                 <div className="pos flex items-center justify-center">
-                  {entry.rank}<span>{entry.rank === 1 ? 'st' : entry.rank === 2 ? 'nd' : 'rd'}</span>
+                  {entry.rank}<span>{getRankSuffix(entry.rank)}</span>
                 </div>
                 <div className="name">
                   <h4>{entry.name}</h4>

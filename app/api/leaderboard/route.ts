@@ -9,7 +9,7 @@ export async function POST(req: Request) {
 
   try {
     // Find all donations for the current month, sorted by amount in descending order
-    const donations = await DonationModel.find().sort({ amount: -1 }); // Get all donors
+    const donations = await DonationModel.find().sort({ amount: -1 }).limit(10); // Get top 10 donors
 
     // Map to the required structure, filtering out 'Not Interested'
     const leaderboardData = donations
