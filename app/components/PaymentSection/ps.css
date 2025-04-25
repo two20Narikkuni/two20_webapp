@@ -1,9 +1,21 @@
-.payment-section-container {
-  height: unset !important;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
+
 .payment-section-container .payment-section {
   margin-bottom: 2.25em;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
+
 .payment-section-container .payment-section h3 {
   color: #4B2984;
   font-size: 2.5rem;
@@ -11,22 +23,126 @@
   font-weight: 700;
   line-height: normal;
   letter-spacing: 0.00625rem;
+  text-align: center;
+  margin-bottom: 0.8em;
 }
+
 @media (max-width: 1000px) {
   .payment-section-container .payment-section h3 {
     font-size: 2rem;
   }
 }
+
 @media (max-width: 640px) {
   .payment-section-container .payment-section h3 {
     font-size: 1.7rem;
   }
 }
-.payment-section-container .payment-section .payment-buttons {
-  margin-top: 1.25em;
+
+.payment-section-container .payment-section .custom-amount-wrapper {
+  /* Uses mb-4 */
 }
-.payment-section-container .payment-section .payment-buttons button {
+
+.payment-section-container .payment-section .custom-amount-input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   background-color: #FFFFFF;
+  color: #4B2984;
+  border-radius: 0.3125rem;
+  border: 1.3px solid rgba(75, 41, 132, 0.18);
+  padding: 1.125rem 1rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.00563rem;
+  outline: none;
+  -moz-appearance: textfield;
+       appearance: textfield;
+  -webkit-appearance: none;
+  margin: 0;
+  min-width: 50px;
+}
+
+.payment-section-container .payment-section .custom-amount-input::-webkit-input-placeholder {
+  color: #a586d9;
+  font-weight: 500;
+  font-size: 1.7rem;
+  opacity: 1;
+}
+
+.payment-section-container .payment-section .custom-amount-input:-ms-input-placeholder {
+  color: #a586d9;
+  font-weight: 500;
+  font-size: 1.7rem;
+  opacity: 1;
+}
+
+.payment-section-container .payment-section .custom-amount-input::-ms-input-placeholder {
+  color: #a586d9;
+  font-weight: 500;
+  font-size: 1.7rem;
+  opacity: 1;
+}
+
+.payment-section-container .payment-section .custom-amount-input::placeholder {
+  color: #a586d9;
+  font-weight: 500;
+  font-size: 1.7rem;
+  opacity: 1;
+}
+
+.payment-section-container .payment-section .custom-amount-input:focus {
+  border-color: rgba(31, 17, 54, 0.18);
+  -webkit-box-shadow: 0 0 0 2px rgba(75, 41, 132, 0.2);
+          box-shadow: 0 0 0 2px rgba(75, 41, 132, 0.2);
+}
+
+.payment-section-container .payment-section .custom-amount-input::-webkit-outer-spin-button, .payment-section-container .payment-section .custom-amount-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media (max-width: 1000px) {
+  .payment-section-container .payment-section .custom-amount-input {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.7rem;
+  }
+  .payment-section-container .payment-section .custom-amount-input::-webkit-input-placeholder {
+    font-size: 1.5rem;
+  }
+  .payment-section-container .payment-section .custom-amount-input:-ms-input-placeholder {
+    font-size: 1.5rem;
+  }
+  .payment-section-container .payment-section .custom-amount-input::-ms-input-placeholder {
+    font-size: 1.5rem;
+  }
+  .payment-section-container .payment-section .custom-amount-input::placeholder {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .payment-section-container .payment-section .custom-amount-input::-webkit-input-placeholder {
+    font-size: 1.25rem;
+  }
+  .payment-section-container .payment-section .custom-amount-input:-ms-input-placeholder {
+    font-size: 1.25rem;
+  }
+  .payment-section-container .payment-section .custom-amount-input::-ms-input-placeholder {
+    font-size: 1.25rem;
+  }
+  .payment-section-container .payment-section .custom-amount-input::placeholder {
+    font-size: 1.25rem;
+  }
+}
+
+.payment-section-container .payment-section .error-message {
+  /* Uses Tailwind text-red-600 etc */
+}
+
+.payment-section-container .payment-section .payment-button {
   color: #4B2984;
   text-align: center;
   font-size: 2.25rem;
@@ -36,15 +152,99 @@
   letter-spacing: 0.00563rem;
   border-radius: 0.3125rem;
   border: 1.3px solid rgba(75, 41, 132, 0.18);
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 1.125rem 0rem;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s, color 0.2s, border-color 0.2s, opacity 0.2s;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, opacity 0.2s;
 }
+
+.payment-section-container .payment-section .payment-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.payment-section-container .payment-section .payment-button:not(.btn-purple):hover:not(:disabled) {
+  background-color: #f7f7f7;
+}
+
+.payment-section-container .payment-section .payment-button:not(.btn-purple):disabled {
+  background-color: white;
+}
+
 @media (max-width: 1000px) {
-  .payment-section-container .payment-section .payment-buttons button {
+  .payment-section-container .payment-section .payment-button {
     padding: 1rem 0rem;
     font-size: 1.7rem;
   }
-}/*# sourceMappingURL=ps.css.map */
+}
+
+.payment-section-container .payment-section .payment-button.custom-donate-button {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.payment-section-container .payment-section .payment-button.btn-purple {
+  background-color: #4B2984;
+  color: #FFFFFF;
+  border-color: #4B2984;
+}
+
+.payment-section-container .payment-section .payment-button.btn-purple:hover:not(:disabled) {
+  background-color: #351d5d;
+  border-color: #301a55;
+}
+
+.payment-section-container .payment-section .payment-button.btn-purple:disabled {
+  background-color: #6135ab;
+  border-color: #6135ab;
+  opacity: 0.7;
+}
+
+.payment-section-container .payment-section .payment-buttons {
+  margin-top: 1.25em;
+}
+
+.payment-section-container .payment-section .payment-buttons .w-full {
+  width: 100%;
+}
+
+.payment-section-container .payment-section .payment-buttons .grid {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+}
+
+.payment-section-container .payment-section .payment-buttons .grid-cols-3 {
+  -ms-grid-columns: (minmax(0, 1fr))[3];
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.payment-section-container .payment-section .payment-buttons .mb-4 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+  .payment-section-container .payment-section .custom-amount-input-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .payment-section-container .payment-section .custom-amount-input,
+  .payment-section-container .payment-section .payment-button.custom-donate-button {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=ps.css.map */

@@ -1,48 +1,79 @@
 .footer-container {
-  background-color: #4B2984; /* Use your brand color */
-  color: white; /* Text color */
+  background-color: #4B2984;
+  /* Use your brand color */
+  color: white;
+  /* Text color */
 }
 
 .footer-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center; /* Center text for mobile */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  /* Center text for mobile */
 }
 
 .footer-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  gap: 15px; /* Space between links */
+  gap: 15px;
+  /* Space between links */
 }
 
 .footer-link {
-  color: white; /* Link color */
-  text-decoration: none; /* Remove underline */
-  font-weight: bold; /* Make links bold */
+  color: white;
+  /* Link color */
+  text-decoration: none;
+  /* Remove underline */
+  font-weight: bold;
+  /* Make links bold */
 }
 
 .footer-link:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
+  /* Underline on hover */
 }
 
 .parent-org {
-  margin-top: 10px; /* Margin for spacing */
+  margin-top: 10px;
+  /* Margin for spacing */
 }
 
 .parent-org-link {
-  color: white; /* Link color */
-  text-decoration: none; /* Remove underline */
+  color: white;
+  /* Link color */
+  text-decoration: none;
+  /* Remove underline */
 }
 
 .parent-org-link:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
+  /* Underline on hover */
 }
 
 /* Responsive Styles */
 @media (min-width: 768px) {
   .footer-content {
-    flex-direction: row; /* Row layout for larger screens */
-    justify-content: space-between; /* Space between elements */
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    /* Row layout for larger screens */
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    /* Space between elements */
   }
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,8 +1,17 @@
 .howtopay-section-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 3.125rem 0;
   color: var(--text-violet, #4B2984);
   font-size: 1.25rem;
@@ -11,27 +20,42 @@
   line-height: normal;
   letter-spacing: 0.00219rem;
 }
+
 .howtopay-section-container h2 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.25rem;
 }
+
 .howtopay-section-container .howtopay-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   width: 70%;
 }
+
 @media (max-width: 1200px) {
   .howtopay-section-container .howtopay-section {
     width: 90%;
   }
 }
+
 .howtopay-section-container .howtopay-section .list-container .item {
   gap: 0.7em;
   margin-bottom: 1em;
 }
+
 .howtopay-section-container .howtopay-section .list-container .item p {
   color: #434343;
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */

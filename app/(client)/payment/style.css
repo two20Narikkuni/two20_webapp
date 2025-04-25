@@ -2,6 +2,7 @@
   height: 85vh;
   background-color: white;
 }
+
 .payment-section-container .payment-section .amount-container h2 {
   color: var(--cta-color, #4B2984);
   text-align: center;
@@ -11,29 +12,39 @@
   line-height: normal;
   letter-spacing: 0.02031rem;
 }
+
 @media (max-width: 1200px) {
   .payment-section-container .payment-section .amount-container h2 {
     font-size: 6rem;
   }
 }
+
 .payment-section-container .payment-section .amount-container .form-container form {
   width: 30%;
 }
+
 @media (max-width: 1100px) {
   .payment-section-container .payment-section .amount-container .form-container form {
     width: 70%;
   }
 }
+
 @media (max-width: 600px) {
   .payment-section-container .payment-section .amount-container .form-container form {
     width: 90%;
   }
 }
+
 .payment-section-container .payment-section .amount-container .form-container form input {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 1.0625rem 1.1875rem;
-  align-items: center;
-  align-self: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
   border-radius: 0.3125rem;
   border: 1.5px solid var(--outline-violet, rgba(75, 41, 132, 0.18));
   color: #9F9FB7;
@@ -43,12 +54,16 @@
   line-height: normal;
   letter-spacing: 0.00219rem;
 }
+
 .payment-section-container .payment-section .amount-container .form-container form button {
   background-color: #4B2984;
   font-size: 2rem;
   font-weight: 700;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
+
 .payment-section-container .payment-section .amount-container .form-container form button:hover {
   background-color: #3c1e70;
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */

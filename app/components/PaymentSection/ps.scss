@@ -1,53 +1,151 @@
-@import '../../styles/_variables';
+// Assuming _variables.scss contains $main_purple, $white etc.
+@import '../../styles/_variables'; // Adjust path if needed
 
-.payment-section-container{
-    height: unset!important;
-    .payment-section{
+// --- Helper class for screen-reader only text ---
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+}
+// -----------------------------------------------
+
+.payment-section-container {
+    .payment-section {
         margin-bottom: 2.25em;
-        h3{
-            color: $main_purple;
-            font-size: 2.5rem;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
-            letter-spacing: 0.00625rem;
+        padding-left: 1rem; // Add some padding to the main container for mobile
+        padding-right: 1rem;
 
-            @media(max-width: 1000px){
-                font-size: 2rem;
+        h3 {
+            color: $main_purple;
+            font-size: 2.5rem; font-style: normal; font-weight: 700;
+            line-height: normal; letter-spacing: 0.00625rem;
+            text-align: center; margin-bottom: 0.8em;
+
+            @media(max-width: 1000px) { font-size: 2rem; }
+            @media(max-width: 640px) { font-size: 1.7rem; }
+        }
+
+        // --- Styling for the Custom Amount Section ---
+        .custom-amount-wrapper { /* Uses mb-4 */ }
+
+        // Input Group: Base is flex row (from Tailwind)
+        .custom-amount-input-group {
+            // Base styles (applied via Tailwind: flex items-stretch gap-3)
+            // Default is flex-direction: row;
+        }
+
+        // Style the custom amount input field individually
+        .custom-amount-input {
+            flex-grow: 1;
+            background-color: $white; color: $main_purple;
+            border-radius: 0.3125rem; border: 1.3px solid rgba(75, 41, 132, 0.18);
+            padding: 1.125rem 1rem;
+            font-size: 2.25rem; font-weight: 700;
+            line-height: normal; letter-spacing: 0.00563rem;
+            outline: none; appearance: textfield; -webkit-appearance: none; margin: 0;
+            min-width: 50px; // Prevent input from becoming too small before wrapping
+
+            &::placeholder {
+                color: lighten($main_purple, 35%); font-weight: 500;
+                font-size: 1.7rem; opacity: 1;
+            }
+            &:focus {
+                 border-color: darken(rgba(75, 41, 132, 0.18), 20%);
+                 box-shadow: 0 0 0 2px rgba(75, 41, 132, 0.2);
+            }
+            &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+                -webkit-appearance: none; margin: 0;
             }
 
-            @media(max-width: 640px){
+            @media(max-width: 1000px) {
+                padding-top: 1rem; padding-bottom: 1rem;
+                font-size: 1.7rem;
+                 &::placeholder { font-size: 1.5rem; }
+            }
+            @media(max-width: 640px) { // Adjust placeholder further on small screens if needed
+                &::placeholder { font-size: 1.25rem; }
+            }
+        }
+
+        // Error message styling
+        .error-message { /* Uses Tailwind text-red-600 etc */ }
+
+        // --- Base styles for ALL buttons (preset + custom) ---
+        .payment-button {
+            color: $main_purple; text-align: center;
+            font-size: 2.25rem; font-style: normal; font-weight: 700;
+            line-height: normal; letter-spacing: 0.00563rem;
+            border-radius: 0.3125rem; border: 1.3px solid rgba(75, 41, 132, 0.18);
+            background-color: $white;
+            display: flex; padding: 1.125rem 0rem; // Base vertical padding
+            justify-content: center; align-items: center;
+            flex-shrink: 0; cursor: pointer;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s, opacity 0.2s;
+
+            &:disabled { opacity: 0.6; cursor: not-allowed; }
+            &:not(.btn-purple):hover:not(:disabled) { background-color: darken($white, 3%); }
+            &:not(.btn-purple):disabled { background-color: lighten($white, 5%); }
+
+            @media(max-width: 1000px) {
+                padding: 1rem 0rem;
                 font-size: 1.7rem;
             }
+
+            // Specific horizontal padding for the custom button
+             &.custom-donate-button {
+                 padding-left: 1.5rem; // Example horizontal padding
+                 padding-right: 1.5rem;
+             }
         }
 
-        .payment-buttons{
-            margin-top: 1.25em;
-
-            button{
-                background-color: $white;
-                color: $main_purple;
-                text-align: center;
-                font-size: 2.25rem;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
-                letter-spacing: 0.00563rem;
-
-                border-radius: 0.3125rem;
-                border: 1.3px solid rgba(75, 41, 132, 0.18);
-
-                display: flex;
-                padding: 1.125rem 0rem;
-                justify-content: center;
-                align-items: center;
-                flex-shrink: 0;
-
-                @media(max-width: 1000px){
-                    padding: 1rem 0rem;
-                    font-size: 1.7rem;
-                }
+        // --- Styles for the Purple Donate Button ---
+        .payment-button.btn-purple {
+            background-color: $main_purple; color: $white;
+            border-color: $main_purple;
+            &:hover:not(:disabled) {
+                background-color: darken($main_purple, 10%);
+                border-color: darken($main_purple, 12%);
+            }
+            &:disabled {
+                 background-color: lighten($main_purple, 10%);
+                 border-color: lighten($main_purple, 10%);
+                 opacity: 0.7;
             }
         }
+
+
+        // --- Layout styles for preset buttons ---
+        .payment-buttons {
+             margin-top: 1.25em;
+            .w-full { width: 100%; }
+            .grid { display: grid; gap: 1rem; }
+            .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .mb-4 { margin-bottom: 1rem; }
+        }
+
+
+        // ************************************************
+        // ***        MOBILE STACKING CORRECTION        ***
+        // ************************************************
+        @media (max-width: 640px) { // Adjust this breakpoint as needed
+            .custom-amount-input-group {
+                flex-direction: column; // Stack input and button vertically
+                // gap: 0.75rem; // Tailwind gap-3 translates to vertical gap
+            }
+
+            // Ensure both take full width when stacked
+            .custom-amount-input,
+            .payment-button.custom-donate-button {
+                 width: 100%;
+            }
+
+            // Optional: Adjust padding/font on purple button specifically for stacked view if needed
+            // .payment-button.custom-donate-button {
+            //     padding-top: 0.8rem;
+            //     padding-bottom: 0.8rem;
+            //     font-size: 1.5rem; // Example adjustments
+            // }
+        }
+        // ************************************************
+
     }
 }

@@ -7,30 +7,43 @@
   letter-spacing: 0.00625rem;
   margin-bottom: 0.4em;
 }
+
 @media (max-width: 1000px) {
   .about-section-container .about-container .heading {
     font-size: 2rem;
   }
 }
+
 @media (max-width: 640px) {
   .about-section-container .about-container .heading {
     font-size: 1.7rem;
   }
 }
+
 .about-section-container .about-container p {
-  color: #444444; /* Darker text color for readability */
-  font-size: 1.125rem; /* Base font size (18px) */
-  line-height: 1.6; /* Improve readability */
-  margin-top: 1rem; /* Space above paragraphs */
-  margin-bottom: 1rem; /* Space below paragraphs */
+  color: #444444;
+  /* Darker text color for readability */
+  font-size: 1.125rem;
+  /* Base font size (18px) */
+  line-height: 1.6;
+  /* Improve readability */
+  margin-top: 1rem;
+  /* Space above paragraphs */
+  margin-bottom: 1rem;
+  /* Space below paragraphs */
 }
+
 @media (max-width: 1000px) {
   .about-section-container .about-container p {
-    font-size: 1rem; /* Smaller font size on medium screens */
+    font-size: 1rem;
+    /* Smaller font size on medium screens */
   }
 }
+
 @media (max-width: 640px) {
   .about-section-container .about-container p {
-    font-size: 0.875rem; /* Smaller font size on small screens */
+    font-size: 0.875rem;
+    /* Smaller font size on small screens */
   }
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */
