@@ -8,11 +8,14 @@ const PaymentSection = forwardRef<HTMLDivElement>((props, ref) => {
   const [customAmount, setCustomAmount] = useState('');
   const [customAmountError, setCustomAmountError] = useState('');
 
+  // --- MODIFIED FUNCTION ---
+  // Now updates the custom amount input field instead of navigating
   const handleAmountClick = (amount: number) => {
-    setCustomAmount('');
-    setCustomAmountError('');
-    router.push(`/payment?amount=${amount}`);
+    setCustomAmount(amount.toString()); // Set the state with the button's value
+    setCustomAmountError(''); // Clear any previous error message
+    // No router.push() here anymore
   };
+  // --- END MODIFIED FUNCTION ---
 
   const handleCustomAmountSubmit = () => {
     const amountValue = parseFloat(customAmount);
@@ -25,13 +28,16 @@ const PaymentSection = forwardRef<HTMLDivElement>((props, ref) => {
       return;
     }
     setCustomAmountError('');
+    // Navigation happens ONLY through this function now
     router.push(`/payment?amount=${amountValue}`);
   };
 
   const handleCustomAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    // Allow only numbers and a single decimal point
     if (/^\d*\.?\d*$/.test(value) || value === '') {
         setCustomAmount(value);
+        // Clear error if input is valid or empty
         if (value === '' || parseFloat(value) > 0) {
            setCustomAmountError('');
         }
@@ -41,11 +47,8 @@ const PaymentSection = forwardRef<HTMLDivElement>((props, ref) => {
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      if (customAmount && parseFloat(customAmount) >= 1) {
-          handleCustomAmountSubmit();
-      } else {
-          handleCustomAmountSubmit(); // Trigger validation
-      }
+      // Trigger validation and potential submission on Enter key
+      handleCustomAmountSubmit();
     }
   };
 
@@ -59,11 +62,10 @@ const PaymentSection = forwardRef<HTMLDivElement>((props, ref) => {
              <label htmlFor="customAmountInput" className="sr-only">
                 Enter a Custom Amount
             </label>
-             {/* Flex container for Input + Button - Use Tailwind for gap */}
-             {/* --- This div controls the layout --- */}
+             {/* Flex container for Input + Button */}
             <div className="custom-amount-input-group flex items-stretch gap-3">
               <input
-                type="number"
+                type="number" // Use "number" for better mobile keyboards, but styling removes spinners
                 id="customAmountInput"
                 name="customAmount"
                 value={customAmount}
@@ -71,14 +73,17 @@ const PaymentSection = forwardRef<HTMLDivElement>((props, ref) => {
                 onKeyPress={handleKeyPress}
                 placeholder="Or Enter a Custom Amount (₹)"
                 className="custom-amount-input flex-grow" // Input grows horizontally
-                min="1"
-                step="any"
+                min="1" // HTML5 validation minimum
+                step="any" // Allow decimals
                 aria-label="Custom donation amount"
+                // Inputmode="decimal" can sometimes help mobile keyboards
+                inputMode="decimal"
               />
               <button
                 onClick={handleCustomAmountSubmit}
                 className="payment-button custom-donate-button btn-purple flex-shrink-0" // Button maintains size
-                disabled={!customAmount || parseFloat(customAmount) < 1}
+                // Disable button if input is empty or less than 1
+                disabled={!customAmount || parseFloat(customAmount) < 1 || isNaN(parseFloat(customAmount))}
               >
                 Donate
               </button>
@@ -90,7 +95,7 @@ const PaymentSection = forwardRef<HTMLDivElement>((props, ref) => {
         </div>
 
 
-        {/* Existing Preset Buttons Section */}
+        {/* Existing Preset Buttons Section - Calls the MODIFIED handleAmountClick */}
         <div className="payment-buttons">
           {/* First Row: Single Button (₹20) */}
           <div className="w-full mb-4">
@@ -121,5 +126,3 @@ const PaymentSection = forwardRef<HTMLDivElement>((props, ref) => {
 PaymentSection.displayName = 'PaymentSection';
 
 export default PaymentSection;
-
-//sdfljsdfsdfsdf
